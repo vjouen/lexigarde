@@ -43,7 +43,7 @@ export async function POST(request: Request) {
 
   if (!looksLikeScanResult(body)) {
     return NextResponse.json(
-      { error: "Le corps doit être un résultat de scan Verdiq (ScanResult)." },
+      { error: "Le corps doit être un résultat de scan Lexigarde (ScanResult)." },
       { status: 400 },
     );
   }

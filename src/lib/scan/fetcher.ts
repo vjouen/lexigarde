@@ -4,7 +4,7 @@
 
 import type { RawScanData } from "./types";
 
-const USER_AGENT = "VerdiqBot/0.1 (audit RGPD; +https://verdiq.fr)";
+const USER_AGENT = "LexigardeBot/0.1 (audit RGPD; +https://lexigarde.fr)";
 const FETCH_TIMEOUT_MS = 15_000;
 const MAX_HTML_BYTES = 3_000_000; // 3 Mo : au-delà on tronque, inutile pour l'analyse
 

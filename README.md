@@ -1,4 +1,4 @@
-# Verdiq — Audit RGPD express de sites web
+# Lexigarde — Audit RGPD express de sites web
 
 > Entrez une URL, obtenez en 30 secondes un rapport de conformité RGPD : score global, constats détaillés avec leur fondement juridique, et une synthèse en langage clair générée par IA pour la direction.
 
@@ -6,7 +6,7 @@
 
 ---
 
-## Ce que fait Verdiq
+## Ce que fait Lexigarde
 
 L'outil scanne la page d'accueil d'un site et évalue **4 blocs de conformité**, chacun noté sur 100 :
 
@@ -77,4 +77,4 @@ npm run dev
 
 ---
 
-*Verdiq est un projet pédagogique et un outil de pré-diagnostic. Il ne constitue pas un conseil juridique.*
+*Lexigarde est un projet pédagogique et un outil de pré-diagnostic. Il ne constitue pas un conseil juridique.*

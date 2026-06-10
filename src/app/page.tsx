@@ -191,7 +191,7 @@ export default function Home() {
       {/* Marque */}
       <header className="mb-12 text-center">
         <p className="font-serif text-2xl font-semibold tracking-tight text-ink">
-          Verdiq<span className="text-accent">.</span>
+          Lexigarde<span className="text-accent">.</span>
         </p>
       </header>
 
@@ -320,7 +320,7 @@ export default function Home() {
           ))}
 
           <p className="mt-10 text-center text-xs text-stone-400">
-            Verdiq analyse la page d&apos;accueil et ses en-têtes HTTP. Ce rapport est un premier
+            Lexigarde analyse la page d&apos;accueil et ses en-têtes HTTP. Ce rapport est un premier
             diagnostic automatique, il ne remplace pas un audit de conformité complet.
           </p>
 
@@ -345,7 +345,7 @@ export default function Home() {
       {!result && !scanning && (
         <div className="no-print">
           <h2 className="mb-4 text-center font-serif text-2xl font-semibold text-ink">
-            Ce que Verdiq vérifie
+            Ce que Lexigarde vérifie
           </h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {PILLARS.map((p) => (

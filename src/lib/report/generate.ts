@@ -14,7 +14,7 @@ export class ReportConfigError extends Error {}
 
 const SYSTEM_PROMPT = `Tu es un consultant senior en conformité RGPD et cybersécurité.
 On te fournit le résultat JSON d'un scan automatique de conformité d'un site web
-(outil Verdiq) : un score global, et des constats par bloc (mentions obligatoires,
+(outil Lexigarde) : un score global, et des constats par bloc (mentions obligatoires,
 sécurité technique, cookies et traceurs, formulaires), chacun avec sa sévérité.
 
 Rédige une synthèse en français pour le dirigeant de l'entreprise, qui n'est pas

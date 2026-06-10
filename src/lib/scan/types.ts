@@ -1,5 +1,5 @@
 /**
- * Types partagés du moteur de scan Verdiq.
+ * Types partagés du moteur de scan Lexigarde.
  */
 
 /** Données brutes récupérées lors du fetch de la page cible. */

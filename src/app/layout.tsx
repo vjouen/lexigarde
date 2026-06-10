@@ -18,7 +18,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Verdiq — Audit RGPD express de votre site web",
+  title: "Lexigarde — Audit RGPD express de votre site web",
   description:
     "Entrez l'URL de votre site et obtenez en 30 secondes un rapport de conformité RGPD : mentions légales, cookies, sécurité, formulaires.",
 };
