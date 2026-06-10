@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f1e8;
+  --foreground: #2b2520;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  /* Palette "cabinet de conseil" : crème, encre chaude, terracotta */
+  --color-cream: #f6f1e8;
+  --color-paper: #fdfbf6;
+  --color-ink: #2b2520;
+  --color-accent: #9a4a2e;
+  --color-accent-deep: #7c3a22;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-fraunces);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Export PDF : on imprime uniquement la zone rapport, sans l'interface */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff;
+  }
+  .print-block {
+    break-inside: avoid;
+  }
+}
