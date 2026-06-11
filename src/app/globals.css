@@ -1,22 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f1e8;
-  --foreground: #2b2520;
+  --background: #f8fafc;
+  --foreground: #0f172a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* Palette "cabinet de conseil" : crème, encre chaude, terracotta */
-  --color-cream: #f6f1e8;
-  --color-paper: #fdfbf6;
-  --color-ink: #2b2520;
-  --color-accent: #9a4a2e;
-  --color-accent-deep: #7c3a22;
+  /* Palette "sérénité technique" : surfaces claires, bleu profond de confiance */
+  --color-paper: #ffffff;
+  --color-ink: #0f172a;
+  --color-accent: #1e40af;
+  --color-accent-deep: #1e3a8a;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-serif: var(--font-fraunces);
 }
 
 body {

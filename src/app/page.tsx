@@ -52,8 +52,8 @@ const SEVERITY_STYLE: Record<
   },
   info: {
     label: "À vérifier",
-    badge: "bg-stone-200 text-stone-700",
-    border: "border-stone-300",
+    badge: "bg-slate-200 text-slate-700",
+    border: "border-slate-300",
   },
   pass: {
     label: "Conforme",
@@ -63,15 +63,15 @@ const SEVERITY_STYLE: Record<
 };
 
 function scoreColor(score: number): string {
-  if (score >= 80) return "text-emerald-700";
-  if (score >= 60) return "text-amber-700";
-  return "text-red-700";
+  if (score >= 80) return "text-emerald-600";
+  if (score >= 60) return "text-amber-600";
+  return "text-red-600";
 }
 
 function scoreRing(score: number): string {
-  if (score >= 80) return "stroke-emerald-600";
+  if (score >= 80) return "stroke-emerald-500";
   if (score >= 60) return "stroke-amber-500";
-  return "stroke-red-600";
+  return "stroke-red-500";
 }
 
 function ScoreCircle({ score }: { score: number }) {
@@ -80,7 +80,7 @@ function ScoreCircle({ score }: { score: number }) {
   return (
     <div className="relative h-32 w-32 shrink-0">
       <svg viewBox="0 0 120 120" className="h-32 w-32 -rotate-90">
-        <circle cx="60" cy="60" r={radius} fill="none" strokeWidth="10" className="stroke-stone-200" />
+        <circle cx="60" cy="60" r={radius} fill="none" strokeWidth="10" className="stroke-slate-200" />
         <circle
           cx="60"
           cy="60"
@@ -94,8 +94,8 @@ function ScoreCircle({ score }: { score: number }) {
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className={`font-serif text-3xl font-semibold ${scoreColor(score)}`}>{score}</span>
-        <span className="text-xs text-stone-500">/ 100</span>
+        <span className={`text-3xl font-semibold ${scoreColor(score)}`}>{score}</span>
+        <span className="text-xs text-slate-500">/ 100</span>
       </div>
     </div>
   );
@@ -111,15 +111,15 @@ function FindingCard({ finding }: { finding: Finding }) {
           {style.label}
         </span>
       </div>
-      <p className="mt-2 text-sm leading-relaxed text-stone-600">{finding.explanation}</p>
+      <p className="mt-2 text-sm leading-relaxed text-slate-600">{finding.explanation}</p>
       {finding.recommendation && (
-        <p className="mt-2 text-sm text-stone-700">
+        <p className="mt-2 text-sm text-slate-700">
           <span className="font-medium">Action : </span>
           {finding.recommendation}
         </p>
       )}
       {finding.evidence && (
-        <p className="mt-2 truncate font-mono text-xs text-stone-400">{finding.evidence}</p>
+        <p className="mt-2 truncate font-mono text-xs text-slate-400">{finding.evidence}</p>
       )}
     </div>
   );
@@ -189,21 +189,32 @@ export default function Home() {
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-10">
       {/* Marque */}
-      <header className="mb-12 text-center">
-        <p className="font-serif text-2xl font-semibold tracking-tight text-ink">
-          Lexigarde<span className="text-accent">.</span>
-        </p>
+      <header className="mb-12 flex items-center justify-center gap-2">
+        <svg
+          viewBox="0 0 24 24"
+          className="h-6 w-6 text-accent"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M12 3l7 4v5c0 4.4-3 8-7 9-4-1-7-4.6-7-9V7l7-4z" />
+          <path d="M9 12l2 2 4-4" />
+        </svg>
+        <span className="text-xl font-semibold tracking-tight text-ink">Lexigarde</span>
       </header>
 
       {/* Hero */}
       {!result && (
         <section className="no-print mb-10 text-center">
-          <h1 className="font-serif text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+          <h1 className="text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
             Votre site web est-il
             <br />
-            <em className="text-accent">conforme au RGPD</em> ?
+            <span className="text-accent">conforme au RGPD</span> ?
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-stone-600">
+          <p className="mx-auto mt-4 max-w-xl text-slate-600">
             Entrez une URL, obtenez en 30 secondes un diagnostic clair : ce qui va, ce qui
             expose votre entreprise, et quoi corriger en priorité.
           </p>
@@ -211,7 +222,7 @@ export default function Home() {
             {REFERENTIELS.map((r) => (
               <span
                 key={r}
-                className="rounded-full border border-stone-300 bg-paper px-3 py-1 text-xs font-medium text-stone-600"
+                className="rounded-md bg-blue-50 px-3 py-1 text-xs font-medium text-blue-800"
               >
                 {r}
               </span>
@@ -227,7 +238,7 @@ export default function Home() {
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           placeholder="https://votre-site.fr"
-          className="flex-1 rounded-lg border border-stone-300 bg-paper px-4 py-3 text-ink placeholder-stone-400 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/15"
+          className="flex-1 rounded-lg border border-slate-300 bg-paper px-4 py-3 text-ink placeholder-slate-400 focus:border-accent focus:outline-none focus:ring-2 focus:ring-blue-100"
           aria-label="URL du site à analyser"
         />
         <button
@@ -241,11 +252,11 @@ export default function Home() {
 
       {/* Chiffres clés */}
       {!result && !scanning && (
-        <section className="no-print mb-12 grid grid-cols-3 gap-4 border-y border-stone-300/70 py-6">
+        <section className="no-print mb-12 grid grid-cols-3 gap-4 border-y border-slate-200 py-6">
           {STATS.map((s) => (
             <div key={s.label} className="text-center">
-              <p className="font-serif text-3xl font-semibold text-ink">{s.value}</p>
-              <p className="mt-1 text-xs text-stone-500 sm:text-sm">{s.label}</p>
+              <p className="text-3xl font-semibold text-ink">{s.value}</p>
+              <p className="mt-1 text-xs text-slate-500 sm:text-sm">{s.label}</p>
             </div>
           ))}
         </section>
@@ -262,17 +273,17 @@ export default function Home() {
       {result && (
         <div>
           {/* Score global */}
-          <section className="print-block mb-8 flex items-center gap-6 rounded-xl border border-stone-300/70 bg-paper p-6">
+          <section className="print-block mb-8 flex items-center gap-6 rounded-xl border border-slate-200 bg-paper p-6">
             <ScoreCircle score={result.globalScore} />
             <div>
-              <h2 className="font-serif text-xl font-semibold text-ink">Score de conformité</h2>
-              <p className="mt-1 break-all text-sm text-stone-500">{result.finalUrl}</p>
-              <p className="text-xs text-stone-400">
+              <h2 className="text-lg font-semibold text-ink">Score de conformité</h2>
+              <p className="mt-1 break-all text-sm text-slate-500">{result.finalUrl}</p>
+              <p className="text-xs text-slate-400">
                 Analysé le {new Date(result.scannedAt).toLocaleString("fr-FR")}
               </p>
               <button
                 onClick={() => window.print()}
-                className="no-print mt-3 rounded-md border border-stone-300 bg-white px-3 py-1.5 text-sm text-stone-700 transition hover:bg-stone-100"
+                className="no-print mt-3 rounded-md border border-slate-300 bg-paper px-3 py-1.5 text-sm text-slate-700 transition hover:bg-slate-100"
               >
                 Exporter en PDF
               </button>
@@ -280,22 +291,20 @@ export default function Home() {
           </section>
 
           {/* Synthèse IA */}
-          <section className="print-block mb-8 rounded-xl border border-accent/25 bg-paper p-6">
-            <h2 className="mb-3 font-serif text-xl font-semibold text-ink">
-              Synthèse pour la direction
-            </h2>
+          <section className="print-block mb-8 rounded-xl border border-blue-100 bg-blue-50/40 p-6">
+            <h2 className="mb-3 text-lg font-semibold text-ink">Synthèse pour la direction</h2>
             {summary && (
-              <div className="whitespace-pre-wrap text-sm leading-relaxed text-stone-700">
+              <div className="whitespace-pre-wrap text-sm leading-relaxed text-slate-700">
                 {summary}
               </div>
             )}
             {summaryStatus === "loading" && (
-              <p className="animate-pulse text-sm text-stone-500">
+              <p className="animate-pulse text-sm text-slate-500">
                 Rédaction de la synthèse en cours…
               </p>
             )}
             {summaryStatus === "error" && (
-              <p className="text-sm text-stone-500">
+              <p className="text-sm text-slate-500">
                 {summaryError ??
                   "Synthèse indisponible pour le moment. Les constats détaillés ci-dessous restent complets."}
               </p>
@@ -306,8 +315,8 @@ export default function Home() {
           {result.blocks.map((block) => (
             <section key={block.id} className="mb-8">
               <div className="mb-3 flex items-baseline justify-between">
-                <h3 className="font-serif text-xl font-semibold text-ink">{block.label}</h3>
-                <span className={`text-xl font-bold ${scoreColor(block.score)}`}>
+                <h3 className="text-lg font-semibold text-ink">{block.label}</h3>
+                <span className={`text-xl font-semibold ${scoreColor(block.score)}`}>
                   {block.score}/100
                 </span>
               </div>
@@ -319,9 +328,9 @@ export default function Home() {
             </section>
           ))}
 
-          <p className="mt-10 text-center text-xs text-stone-400">
-            Lexigarde analyse la page d&apos;accueil et ses en-têtes HTTP. Ce rapport est un premier
-            diagnostic automatique, il ne remplace pas un audit de conformité complet.
+          <p className="mt-10 text-center text-xs text-slate-400">
+            Lexigarde analyse la page d&apos;accueil et ses en-têtes HTTP. Ce rapport est un
+            premier diagnostic automatique, il ne remplace pas un audit de conformité complet.
           </p>
 
           <div className="no-print mt-8 text-center">
@@ -333,7 +342,7 @@ export default function Home() {
                 setUrl("");
                 window.scrollTo({ top: 0 });
               }}
-              className="text-sm text-accent hover:underline"
+              className="text-sm font-medium text-accent hover:underline"
             >
               ← Analyser un autre site
             </button>
@@ -344,18 +353,18 @@ export default function Home() {
       {/* Vitrine */}
       {!result && !scanning && (
         <div className="no-print">
-          <h2 className="mb-4 text-center font-serif text-2xl font-semibold text-ink">
+          <h2 className="mb-4 text-center text-2xl font-semibold tracking-tight text-ink">
             Ce que Lexigarde vérifie
           </h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {PILLARS.map((p) => (
-              <div key={p.title} className="rounded-xl border border-stone-300/70 bg-paper p-5">
-                <h3 className="font-serif text-lg font-semibold text-ink">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-stone-600">{p.text}</p>
+              <div key={p.title} className="rounded-xl border border-slate-200 bg-paper p-5">
+                <h3 className="text-lg font-semibold text-ink">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{p.text}</p>
               </div>
             ))}
           </div>
-          <p className="mx-auto mt-8 max-w-xl text-center text-sm leading-relaxed text-stone-600">
+          <p className="mx-auto mt-8 max-w-xl text-center text-sm leading-relaxed text-slate-600">
             Chaque constat cite son fondement juridique et propose une action corrective
             concrète. Une synthèse en langage clair, pensée pour la direction, est générée pour
             chaque rapport. Aucune donnée n&apos;est conservée.
@@ -364,7 +373,7 @@ export default function Home() {
       )}
 
       {/* Pied de page */}
-      <footer className="no-print mt-14 border-t border-stone-300/70 pt-6 text-center text-sm text-stone-500">
+      <footer className="no-print mt-14 border-t border-slate-200 pt-6 text-center text-sm text-slate-500">
         <p>
           Créé par <span className="font-medium text-ink">{AUTHOR.name}</span> — projet
           portfolio cybersécurité &amp; GRC
@@ -374,7 +383,7 @@ export default function Home() {
             href={AUTHOR.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent hover:underline"
+            className="font-medium text-accent hover:underline"
           >
             GitHub
           </a>
@@ -382,7 +391,7 @@ export default function Home() {
             href={AUTHOR.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent hover:underline"
+            className="font-medium text-accent hover:underline"
           >
             LinkedIn
           </a>
