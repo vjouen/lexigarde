@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { LegalLayout, LegalSection } from "@/components/legal-layout";
 import { AUTHOR } from "@/components/footer";
 
@@ -75,12 +76,14 @@ export default function APropos() {
       <LegalSection title="L'auteur">
         <div className="rounded-xl border border-slate-200 bg-paper p-6">
           <div className="flex items-center gap-4">
-            <div
-              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-accent text-lg font-semibold text-white"
-              aria-hidden="true"
-            >
-              VJ
-            </div>
+            <Image
+              src="/valerian-jouen.jpg"
+              alt={`Portrait de ${AUTHOR.name}`}
+              width={160}
+              height={160}
+              className="h-20 w-20 shrink-0 rounded-full object-cover"
+              style={{ objectPosition: "center 30%" }}
+            />
             <div>
               <p className="font-semibold text-ink">{AUTHOR.name}</p>
               <p className="text-sm text-slate-500">Concepteur de Lexigarde</p>
