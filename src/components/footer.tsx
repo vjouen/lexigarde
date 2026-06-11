@@ -35,6 +35,9 @@ export function Footer() {
           </a>
         </p>
         <p className="mt-4 space-x-4 text-xs">
+          <Link href="/a-propos" className="text-slate-500 hover:text-accent hover:underline">
+            À propos
+          </Link>
           <Link href="/mentions-legales" className="text-slate-500 hover:text-accent hover:underline">
             Mentions légales
           </Link>

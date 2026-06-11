@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { ScanResult, Finding, Severity } from "@/lib/scan/types";
-import { AUTHOR } from "@/components/footer";
 
 const REFERENTIELS = ["RGPD", "Recommandations CNIL", "Guides ANSSI", "LCEN"];
 
@@ -362,60 +362,11 @@ export default function Home() {
           <p className="mx-auto mt-8 max-w-xl text-center text-sm leading-relaxed text-slate-600">
             Chaque constat cite son fondement juridique et propose une action corrective
             concrète. Une synthèse en langage clair, pensée pour la direction, est générée pour
-            chaque rapport. Aucune donnée n&apos;est conservée.
+            chaque rapport. Aucune donnée n&apos;est conservée.{" "}
+            <Link href="/a-propos" className="font-medium text-accent hover:underline">
+              Découvrir le projet et son auteur →
+            </Link>
           </p>
-
-          {/* À propos / méthodologie */}
-          <section className="mt-16 rounded-xl border border-slate-200 bg-paper p-8">
-            <h2 className="text-center text-2xl font-semibold tracking-tight text-ink">
-              Derrière Lexigarde
-            </h2>
-
-            <div className="mx-auto mt-6 max-w-xl space-y-4 text-sm leading-relaxed text-slate-600">
-              <p>
-                Lexigarde est né d&apos;un constat simple : la conformité RGPD reste opaque pour
-                la plupart des dirigeants de petites structures. Les rapports d&apos;audit parlent
-                aux juristes, rarement à ceux qui doivent décider. Ce projet explore une autre
-                voie : un diagnostic automatique honnête sur ses limites, où chaque constat cite
-                son fondement juridique, et une synthèse rédigée pour être comprise sans
-                expertise technique.
-              </p>
-              <p>
-                La méthodologie est ouverte : les contrôles s&apos;appuient sur les textes (RGPD,
-                LCEN, lignes directrices CNIL, guides ANSSI), le scoring est pondéré selon les
-                risques de sanction réels, et tout le code est consultable publiquement. Ce que
-                l&apos;outil ne peut pas vérifier, il le dit, plutôt que de l&apos;affirmer.
-              </p>
-              <p>
-                Je suis <span className="font-medium text-ink">{AUTHOR.name}</span>, en
-                reconversion vers la cybersécurité et la GRC après un master en sciences
-                sociales et criminologie. Certifié CompTIA Security+, formé aux référentiels
-                ANSSI (SecNumacadémie), CNIL (RGPD) et EBIOS RM, j&apos;ai conçu Lexigarde pour
-                mettre cette double culture, juridique et technique, au service d&apos;un outil
-                concret. Basé à Nantes, je recherche une première expérience en analyse GRC,
-                conseil cybersécurité ou SOC.
-              </p>
-            </div>
-
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <a
-                href={AUTHOR.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-lg bg-accent px-6 py-3 font-medium text-white transition hover:bg-accent-deep"
-              >
-                Voir mon profil LinkedIn
-              </a>
-              <a
-                href={AUTHOR.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-lg border border-slate-300 bg-paper px-6 py-3 font-medium text-slate-700 transition hover:bg-slate-100"
-              >
-                Le code sur GitHub
-              </a>
-            </div>
-          </section>
         </div>
       )}
     </main>
