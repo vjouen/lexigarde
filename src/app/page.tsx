@@ -183,24 +183,6 @@ export default function Home() {
 
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-10">
-      {/* Marque */}
-      <header className="mb-12 flex items-center justify-center gap-2">
-        <svg
-          viewBox="0 0 24 24"
-          className="h-6 w-6 text-accent"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
-        >
-          <path d="M12 3l7 4v5c0 4.4-3 8-7 9-4-1-7-4.6-7-9V7l7-4z" />
-          <path d="M9 12l2 2 4-4" />
-        </svg>
-        <span className="text-xl font-semibold tracking-tight text-ink">Lexigarde</span>
-      </header>
-
       {/* Hero */}
       {!result && (
         <section className="no-print mb-10 text-center">
