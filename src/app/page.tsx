@@ -186,7 +186,7 @@ export default function Home() {
       {/* Hero */}
       {!result && (
         <section className="no-print mb-10 text-center">
-          <h1 className="text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+          <h1 className="text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
             Votre site web est-il
             <br />
             <span className="text-accent">conforme au RGPD</span> ?
