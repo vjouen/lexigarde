@@ -3,7 +3,7 @@ import { LegalLayout, LegalSection } from "@/components/legal-layout";
 import { AUTHOR } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité — Lexigarde",
+  title: "Politique de confidentialité",
   description:
     "Traitements de données personnelles réalisés par lexigarde.fr : finalités, bases légales, durées de conservation et droits.",
 };

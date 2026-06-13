@@ -14,10 +14,35 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://lexigarde.fr";
+const SITE_TITLE = "Lexigarde, audit RGPD express de votre site web";
+const SITE_DESCRIPTION =
+  "Entrez l'URL de votre site et obtenez en 30 secondes un rapport de conformité RGPD : mentions légales, cookies, sécurité, formulaires.";
+
 export const metadata: Metadata = {
-  title: "Lexigarde — Audit RGPD express de votre site web",
-  description:
-    "Entrez l'URL de votre site et obtenez en 30 secondes un rapport de conformité RGPD : mentions légales, cookies, sécurité, formulaires.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: "%s | Lexigarde",
+  },
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: SITE_URL,
+    siteName: "Lexigarde",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

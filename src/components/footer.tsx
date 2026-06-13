@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="no-print mx-auto w-full max-w-3xl px-4 pb-10">
       <div className="border-t border-slate-200 pt-6 text-center text-sm text-slate-500">
         <p>
-          Créé par <span className="font-medium text-ink">{AUTHOR.name}</span> — projet
+          Créé par <span className="font-medium text-ink">{AUTHOR.name}</span>, projet
           portfolio cybersécurité &amp; GRC
         </p>
         <p className="mt-2 space-x-4">

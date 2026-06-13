@@ -3,7 +3,7 @@ import { LegalLayout, LegalSection } from "@/components/legal-layout";
 import { AUTHOR } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Mentions légales — Lexigarde",
+  title: "Mentions légales",
   description: "Identité de l'éditeur et de l'hébergeur du site lexigarde.fr.",
 };
 

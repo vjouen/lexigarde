@@ -5,7 +5,7 @@ import { LegalLayout, LegalSection } from "@/components/legal-layout";
 import { AUTHOR } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Derrière Lexigarde — le projet et son auteur",
+  title: "Derrière Lexigarde : le projet et son auteur",
   description:
     "Pourquoi Lexigarde existe, comment fonctionne sa méthodologie d'analyse, et qui l'a conçu.",
 };

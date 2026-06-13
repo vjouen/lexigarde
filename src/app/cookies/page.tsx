@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LegalLayout, LegalSection } from "@/components/legal-layout";
 
 export const metadata: Metadata = {
-  title: "Cookies — Lexigarde",
+  title: "Cookies",
   description: "Politique cookies de lexigarde.fr : aucun traceur soumis à consentement n'est utilisé.",
 };
 
